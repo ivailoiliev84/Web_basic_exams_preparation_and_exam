@@ -1,0 +1,14 @@
+<div class="container">
+
+    <h1>Delete Recipe</h1>
+    <div class="items-container">
+        <div class="item">
+            <form method="post" action="{% url 'delete recipe' recipe.id %}">
+                {% csrf_token %}
+                {{ form }}
+                <button>Delete</button>
+            </form>
+        </div>
+    </div>
+
+</div>

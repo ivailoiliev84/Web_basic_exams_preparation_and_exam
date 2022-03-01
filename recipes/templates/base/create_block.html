@@ -1,0 +1,14 @@
+<div class="container">
+
+    <h1>Create Recipe</h1>
+    <div class="items-container">
+        <div class="item">
+            <form method="POST" action="{% url 'create recipe' %}">
+               {% csrf_token %}
+                {{ form }}
+                <button>Create</button>
+            </form>
+        </div>
+    </div>
+
+</div>

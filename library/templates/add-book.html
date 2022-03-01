@@ -1,0 +1,14 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+    <section id="create-page" class="create">
+        <form id="create-form" action="{% url 'add book' %}" method="POST">
+            {% csrf_token %}
+            <fieldset>
+                {{ form }}
+                <input class="button submit" type="submit" value="Add Book">
+            </fieldset>
+        </form>
+    </section>
+
+{% endblock %}

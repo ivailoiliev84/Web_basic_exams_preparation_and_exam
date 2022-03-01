@@ -1,0 +1,30 @@
+<div class="container">
+
+
+    {% if recipes %}
+        <h1>My Recipes</h1>
+        <div class="items-container">
+            <div class="item">
+                {% for recipe in recipes %}
+                    <h2>{{ recipe.tytle }}</h2>
+                    <img class="detail-img" src="{{ recipe.image_url }}"
+                         alt="recipe-image">
+                    <div class="recipe-info">
+                        {{ recipe.description }}
+                    </div>
+                    <div class="buttons-container">
+                        <a class="button detail" href="{% url 'details recipe'  recipe.id %}">Details</a>
+                        <a class="button edit" href="{% url 'edit recipe' recipe.id %}">Edit</a>
+                        <a class="button delete" href="{% url 'delete recipe' recipe.id %}">Delete</a>
+                    </div>
+                    </div>
+                {% endfor %}
+
+        </div>
+    {% else %}
+        <h1>My Recipes</h1>
+        <h2>There are no recipes.</h2>
+
+    {% endif %}
+
+</div>
